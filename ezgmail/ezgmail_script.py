@@ -1,4 +1,6 @@
-import ezgmail, os, variables
+import ezgmail
+import os
+import variables
 
 '''
 # Read unread emails
@@ -29,9 +31,9 @@ had forgotten to add myself in cc 🙈)\n\n\
 Your Friendly Neighborhood,\n\
 Aquaman'
 
-### This is the right way you would attach a file from a different directory
-### You can apply direname(dirname(dirname(...))) as much as needed to go
-### up the parent directories
+# This is the right way you would attach a file from a different directory
+# You can apply direname(dirname(dirname(...))) as much as needed to go
+# up the parent directories
 
 currDir = os.path.dirname(__file__)
 parent = os.path.dirname(currDir)
@@ -40,4 +42,4 @@ print(destDir)
 attachments = [destDir]
 # attachments = []
 
-# ezgmail.send(', '.join(recipients.values()), subject, body, attachments, cc=cc)
+ezgmail.send(', '.join(recipients.values()), subject, body, attachments, cc=cc)

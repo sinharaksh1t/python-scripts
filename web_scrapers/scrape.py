@@ -30,4 +30,5 @@ def web_scrape():
     print(offer[0].getText())
     return (offer[0].getText(), url)
 
+
 # web_scrape()
