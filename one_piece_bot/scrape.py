@@ -1,4 +1,8 @@
-import os, requests, bs4, variables
+import os
+import requests
+import bs4
+import variables
+
 
 def scrape_OP_chapters():
   # Create directory where downloaded files will stay
@@ -35,7 +39,6 @@ def scrape_OP_chapters():
       for chunk in img.iter_content(100000):
         imgFile.write(chunk)
       imgFile.close()
-
 
   # Combine all those into a single PDF
 
