@@ -17,6 +17,7 @@ body = f'<h2>{offerText}</h2>\n\n\
   <hr>\
 Click here to verify: {fcWebsite} \
 <br>\
+<br>\
 Your friendly Neighbothood,\
 <br>\
 ElysiBot'
