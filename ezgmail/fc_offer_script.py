@@ -7,7 +7,7 @@ recipients = {
   'Rakshit': 'sinharakshit7@gmail.com'
 }
 
-subject = 'EZGmail Bot: Fountain Court current offer'
+subject = 'Fountain Court current offer'
 
 print('Starting the scrape...')
 offerText, fcWebsite = scrape.web_scrape()
