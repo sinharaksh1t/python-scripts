@@ -1,13 +1,14 @@
-import os
+# import os
 import requests
 import bs4
+import datetime
 
 
 def web_scrape():
   # Create directory where downloaded files will stay
-  dir = 'downloads'
-  print(f'Creating "{dir}" directory if it doesn\'t exist already...')
-  os.makedirs(dir, exist_ok=True)
+  # dir = 'downloads'
+  # print(f'Creating "{dir}" directory if it doesn\'t exist already...')
+  # os.makedirs(dir, exist_ok=True)
 
   # Download image from the One Piece chapter
   url = f'https://www.essexapartmenthomes.com/apartments/seattle/fountain-court'

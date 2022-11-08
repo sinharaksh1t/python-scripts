@@ -1,5 +1,6 @@
 from web_scrapers import scrape
 import ezgmail
+import datetime
 
 print('Script started...')
 
@@ -24,4 +25,5 @@ ElysiBot'
 
 print('Sending email...')
 ezgmail.send(recipients.get('Rakshit'), subject, body, mimeSubtype='html')
+print(f'Email sent at: {datetime.datetime.now()}')
 print('--------------------------------------------------')
