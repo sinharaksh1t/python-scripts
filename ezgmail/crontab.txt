@@ -1,0 +1,1 @@
+0 11 * * * path/to/python3 path/to/file.py >> path/to/log.log 2>&1
