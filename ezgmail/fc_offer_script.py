@@ -24,3 +24,4 @@ ElysiBot'
 
 print('Sending email...')
 ezgmail.send(recipients.get('Rakshit'), subject, body, mimeSubtype='html')
+print('--------------------------------------------------')
