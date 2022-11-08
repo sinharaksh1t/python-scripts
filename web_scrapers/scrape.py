@@ -11,7 +11,8 @@ def web_scrape():
   # os.makedirs(dir, exist_ok=True)
 
   # Download image from the One Piece chapter
-  url = f'https://www.essexapartmenthomes.com/apartments/seattle/fountain-court'
+  # url = f'https://www.essexapartmenthomes.com/apartments/seattle/fountain-court'
+  url = f'https://www.essexapartmenthomes.com/apartments/seattle/fountain-court/floor-plans-and-pricing'
   print(f'Download the webpage from {url}...')
   res = requests.get(url)
   try:
@@ -22,14 +23,19 @@ def web_scrape():
   soup = bs4.BeautifulSoup(res.text, 'lxml')
   print('Selecting the data coming from the website...')
   selector = 'section.property-offer-cta__main-container h2'
+  # selector1Bed = 'div.floor-plan-card__content__main'
+  selector1Bed = 'div.tabs__content'
   offer = soup.select(selector)
-  print(f'Element found: {offer}')
+  oneBedInfo = soup.select(selector=selector1Bed)
+  # print(f'Element found: {offer}')
+  print(f'Element found: {oneBedInfo}')
 
-  if offer == []:
-    print('Sorry, could not find the manga on the website')
-  else:
-    print(offer[0].getText())
-    return (offer[0].getText(), url)
+  # if offer == []:
+  #   print('Sorry, could not find the desired info on the website')
+  # else:
+  # print(offer[0].getText())
+  # return (offer[0].getText(), url)
+  # print(oneBedInfo[0].getText())
 
 
-# web_scrape()
+web_scrape()
