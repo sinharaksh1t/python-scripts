@@ -25,11 +25,11 @@ def web_scrape():
   offer = soup.select(selector)
   print(f'Element found: {offer}')
 
-  if offer == []:
-    print('Sorry, could not find the manga on the website')
-  else:
+  if len(offer) > 0:
     print(offer[0].getText())
     return (offer[0].getText(), url)
 
+  no_offer = 'Sorry, looks like there is no on-going offer at the moment.'
+  return (no_offer, url)
 
 # web_scrape()
