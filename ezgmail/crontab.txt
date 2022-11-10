@@ -1,1 +1,3 @@
-0 11 * * * path/to/python3 path/to/file.py >> path/to/log.log 2>&1
+30 10,17 * * * /usr/bin/python3 /home/elysipi/Desktop/code/python-scripts/ezgmail/fc_offer_script.py >> /home/elysipi/Desktop/fc_offer_script.log 2>&1
+
+30 10,17 * * * /usr/bin/python3 /home/elysipi/Desktop/code/python-scripts/ezgmail/fc_offer_script.py >> /home/elysipi/Desktop/fc_offer_script.log 2>&1
