@@ -5,7 +5,7 @@ import datetime
 print('Script started...')
 
 recipients = {
-  'Rakshit': 'sinharakshit7@gmail.com'
+  'Rakshit': 'sinharakshit@gmail.com',
 }
 
 subject = 'Fountain Court current offer'
@@ -24,6 +24,6 @@ Your friendly Neighbothood,\
 ElysiBot'
 
 print('Sending email...')
-ezgmail.send(recipients.get('Rakshit'), subject, body, mimeSubtype='html')
+ezgmail.send(', '.join(recipients.values()), subject, body, mimeSubtype='html')
 print(f'Email sent at: {datetime.datetime.now()}')
 print('--------------------------------------------------')

@@ -51,12 +51,12 @@ def scrape_OP_chapters():
   combine_pages.combine_all_pages()
   print('All images have been combined successfully...')
 
-  # Update chapter number
-  print('Starting updating chapter number...')
-  new_chapter = int(current_chapter) + 1
-  utils.update_chapter(new_chapter)
+  # # Update chapter number
+  # print('Starting updating chapter number...')
+  # new_chapter = int(current_chapter) + 1
+  # utils.update_chapter(new_chapter)
 
-  return chapter_url
+  return current_chapter, chapter_url, url
 
 
 # scrape_OP_chapters()
