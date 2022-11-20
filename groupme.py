@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 token = os.getenv('GROUPME_TOKEN')
-print(token)
 
 headers = {"Content-Type": "application/json"}
+
 data = {
   "message": {
     "source_guid": "123456",
