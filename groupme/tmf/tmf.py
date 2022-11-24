@@ -1,5 +1,6 @@
 import requests
 import bs4
+import sys
 
 
 def tmf():
@@ -9,6 +10,7 @@ def tmf():
     response.raise_for_status()
   except Exception as ex:
     print(f'Something went wrong: {ex}')
+    sys.exit(1)
 
   soup = bs4.BeautifulSoup(response.text, 'lxml')
 
