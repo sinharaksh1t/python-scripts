@@ -20,7 +20,7 @@ def scrape_OP_chapters():
     print('The directory already exists. Skipping re-downloading and recreating combined image...')
     return current_chapter, chapter_url, url
 
-  print(f'Creating {dir} directory if it doesn\'t exist already...')
+  print(f'Creating {dir} directory since it doesn\'t exist already...')
   os.makedirs(dir, exist_ok=True)
 
   # Download image from the One Piece chapter
