@@ -7,7 +7,7 @@ import os
 def combine_all_pages():
   _, chapter_url = utils.get_latest_chaper_url()
   combinedFile = chapter_url
-  chapters_dir = f'./one_piece_chapters/{chapter_url}'
+  chapters_dir = f'one_piece_chapters/{chapter_url}'
   chapters = os.listdir(chapters_dir)
   chapters.sort(key=lambda s: sum(map(ord, s)))
   chapters_list = [f'{chapters_dir}/{chapter}' for chapter in chapters]
@@ -27,7 +27,8 @@ def combine_all_pages():
     combinedImage.paste(img, (int(x_offset), y_offset))
     y_offset += img.height + 5
 
-  combinedImage.save(f'{chapters_dir}/{combinedFile}.jpg')
+  comb = f'{chapters_dir}/{combinedFile}.jpg'
+  combinedImage.save(comb)
 
 
 # combine_all_pages()

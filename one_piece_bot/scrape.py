@@ -11,13 +11,19 @@ def scrape_OP_chapters():
   current_chapter, chapter_url = utils.get_latest_chaper_url()
   print(chapter_url)
 
+  url = f'https://ww1.read-onepiece.com/manga/{chapter_url}'
+
   # Create directory where downloaded files will stay
   dir = f'one_piece_chapters/{chapter_url}'
-  print(f'Creating {dir} directory if it doesn\'t exist already...')
+  print(f'Checking if the directory {dir} already exists...')
+  if os.path.isdir(dir):
+    print('The directory already exists. Skipping re-downloading and recreating combined image...')
+    return current_chapter, chapter_url, url
+
+  print(f'Creating {dir} directory since it doesn\'t exist already...')
   os.makedirs(dir, exist_ok=True)
 
   # Download image from the One Piece chapter
-  url = f'https://ww1.read-onepiece.com/manga/{chapter_url}'
   print(f'Download the webpage from {url}...')
   res = requests.get(url)
   try:
@@ -51,12 +57,12 @@ def scrape_OP_chapters():
   combine_pages.combine_all_pages()
   print('All images have been combined successfully...')
 
-  # Update chapter number
-  print('Starting updating chapter number...')
-  new_chapter = int(current_chapter) + 1
-  utils.update_chapter(new_chapter)
+  # # Update chapter number
+  # print('Starting updating chapter number...')
+  # new_chapter = int(current_chapter) + 1
+  # utils.update_chapter(new_chapter)
 
-  return chapter_url
+  return current_chapter, chapter_url, url
 
 
 # scrape_OP_chapters()
