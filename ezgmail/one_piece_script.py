@@ -13,13 +13,19 @@ print('Starting the scrape...')
 current_chapter, chapter_url, url = scrape.scrape_OP_chapters()
 print(f'Scrape and combining process complete for {chapter_url}...')
 
+# Get the host platform
+print('Getting the host platform...')
+host_platform = utils.get_host_platform()
+print(f'Host platform found to be {host_platform}...')
+
 subject = f'One Piece: {chapter_url}'
 
 body = f'Hello<br><br>\
 PFA: {chapter_url}\
 <br>Chapter URL: {url}\
 <br><br>Your Friendly Neighbothood,<br>\
-ElysiBot'
+ElysiBot<br>\
+(Sent from <strong>{host_platform}<strong>)'
 
 # This is the right way you would attach a file from a different directory
 # You can apply direname(dirname(dirname(...))) as much as needed to go

@@ -1,8 +1,12 @@
 import platform
 
 
+def get_host_platform():
+  return platform.platform()
+
+
 def get_chapter_file():
-  host_platform = platform.platform()
+  host_platform = get_host_platform()
   elysipi_chap_list_file = '/home/elysipi/Desktop/code/python-scripts/one_piece_bot/chapters_list.txt'
   mac_chap_list_file = '/Users/rakssinh/Workspace/python-scripts/ezgmail/one_piece_bot/chapters_list.txt'
   chap_file = elysipi_chap_list_file if 'linux' in str.lower(host_platform) else mac_chap_list_file
